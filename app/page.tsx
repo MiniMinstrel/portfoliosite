@@ -43,7 +43,7 @@ type ProjectVideoProps = {
   src: string
 }
 
-function ProjectVideo({ src }: ProjectVideoProps) {
+function JobModal({ job }: { job: (typeof WORK_EXPERIENCE)[number] }) {
   return (
     <MorphingDialog
       transition={{
@@ -53,23 +53,47 @@ function ProjectVideo({ src }: ProjectVideoProps) {
       }}
     >
       <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
+        <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+          <div className="relative flex w-full flex-row justify-between">
+            <div>
+              <h4 className="font-normal dark:text-zinc-100">{job.title}</h4>
+              <p className="text-zinc-500 dark:text-zinc-400">{job.company}</p>
+            </div>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              {job.start} - {job.end}
+            </p>
+          </div>
+        </div>
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
+        <MorphingDialogContent className="relative h-[70%] w-[90%] overflow-hidden rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset md:h-fit md:w-[70%] dark:bg-zinc-950 dark:ring-zinc-800/50">
+          <div className="h-full w-full overflow-y-scroll md:overflow-y-hidden">
+            <div className="relative flex w-full flex-col gap-8 rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative flex w-full flex-row justify-between">
+                <div>
+                  <h4 className="font-normal dark:text-zinc-100">
+                    {job.title}
+                  </h4>
+                  <p className="text-zinc-500 dark:text-zinc-400">
+                    {job.company}
+                  </p>
+                </div>
+                <p className="text-right text-zinc-600 dark:text-zinc-400">
+                  {job.start} - {job.end}
+                </p>
+              </div>
+              <div className="flex w-full flex-col items-start justify-end gap-4">
+                <p className="text-zinc-600 italic dark:text-zinc-400">
+                  {job.tagline}
+                </p>
+                <ul className="list-disc space-y-2 pl-5 text-zinc-600 dark:text-zinc-400">
+                  {job.description.map((line, index) => (
+                    <li key={index}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </MorphingDialogContent>
         <MorphingDialogClose
           className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
@@ -154,9 +178,15 @@ export default function Personal() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <div className="relative cursor-pointer rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+                  <img
+                    src={project.video}
+                    alt={project.name}
+                    className="aspect-video w-full rounded-xl object-cover"
+                  />
+                </div>
+              </a>
               <div className="px-1">
                 <a
                   className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
@@ -184,7 +214,6 @@ export default function Personal() {
           {WORK_EXPERIENCE.map((job) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
               target="_blank"
               rel="noopener noreferrer"
               key={job.id}
@@ -193,21 +222,7 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
-                    </p>
-                  </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
-                </div>
-              </div>
+              <JobModal key={job.id} job={job} />
             </a>
           ))}
         </div>
