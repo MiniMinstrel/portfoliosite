@@ -57,11 +57,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Feb 2026',
     link: 'placeholder',
     id: 'work1',
-    tagline: 'I had the opportunity to work across multiple divisions for half a year, then transitioned to the Digital Commerce team for the remainder of my time at Southern Glazer\'s. I worked on a variety of projects, but my main focus was on the login and password reset experiences for the company\'s B2B e-commerce platform.',
+    tagline: 'I worked under Southern Glazer\'s Wine and Spirits frontend division, which dedicated itself to improving the user experience on their flagship website, Proof. Specifically, my team was focused on any and all aspects of the authentication and identity management, including implementations of webpages related to it.',
     description: [
-      'Selected through a rigorous process to be part of the 10 person prestigious Next-Gen ETP career program for new graduates.',
-      'Constructed new login and password reset experiences through ReactJS and popular web SDKs to successfully authenticate over 30k users since launch.',
-      'Actively participated in design reviews on Figma to provide critical developer inputs, whilst also maintaining suitable UX as a top priority.',
+      'Constructed new login and password reset experiences through ReactJS, popular web SDKs, and SAP Hybris environments to successfully authenticate over 30k users since initial launch',
+      'Wrote thorough documentation and unit tests with over 90% code coverage to take initiative and prepare excellent resources for the team to utilize within a GitHub monorepository environment',
+      'Utilized Splunk dashboards to examine logs in real-time and fix production-level bugs within a day',
     ]
   },
   {
@@ -73,9 +73,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work2',
     tagline: 'I had the privilege of working alongside lab director Dr. Sharon Lynn Chu and her research team within the University of Florida ELX Lab, which is dedicated to studying human behavior in technological contexts. My work revolved around studying college undergraduates\' performance in job interviews, and the development of educational technology for children.',
     description: [
-      'Collaborated with the research team at the Embodied Learning Experience Lab while managing three college classes',
-      'Conducted studies, formatted interview transcripts, and properly coded them for a job interview study',
-      'Performed research into WearOS and general wearable technology for the development of an educational smartwatch app',
+      'Collaborated with the research team at the UF ELX Lab while managing three college classes to examine human behavior within technological contexts',
+      'Efficiently conducted, formatted, and coded interview transcripts for over 25 mock job interviews for a behavioral analysis within a job training study',
+      'Presented findings to the head researcher through appropriate diagrams and reports to draw actionable insights from the research',
     ]
   },
   {
@@ -85,11 +85,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Aug 2023',
     link: 'placeholder',
     id: 'work3',
-    tagline: 'I worked as an intern within a fast-paced startup environment, where I was responsible for implementing new features and maintaining the codebase for The Promo App, a large-scale ticket management mobile app that specializes in advertising for small businesses.',
+    tagline: 'I worked on a small, diverse team to implement web and mobile versions of The Promo App, a large-scale ticket management application that specializes in advertising/marketing for small businesses. The internship lasted 3 months, in which I was tasked to build and test both implementations extensively alongside a seasoned team of developers.',
     description: [
-      'Implemented a custom error handler for teh repository to best fit the team\'s needs, which drastically reduced time spent debugging and handling errors across the app',
-      'Communicated priorities each day with development team, as well as assisted with bug detection, software testing, code refactoring, and thorough documentation of the codebase',
-      'Learned React.js, Node.js, and React Native within two weeks, as well as software such as Postman, Expo, Jira, and Figma to adapt to the necessary tools utilized within the company',
+      'Developed a modern UI for the mobile application’s web port through React Native, ensuring responsive breakpoints, cross-browser compatibility, and accessibility needs were considered and added',
+      'Implemented a custom error handler in JavaScript that was widely utilized throughout the GitHub repository to properly triage exceptions and maintain proper UX across the web and mobile applications',
+      'Learned MERN stack and React Native within two weeks, as well as software such as Postman, Expo, Jira, and Figma to adapt to the necessary tools utilized within the company',
     ]
   },
   {
@@ -99,7 +99,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Sept 2022',
     link: 'placeholder',
     id: 'work4',
-    tagline: 'I served as a program lead and technical consultant for the Zero Robotics Middle School Summer Program 2022, which is a competitive programming challenge for middle school students run by MIT and NASA. My team and I were the first contacts for strategy design, social media outreach, and competition management over the 5 month program.',
+    tagline: 'I worked remotely as a subject matter expert and program lead on behalf of a non-profit to direct a tech-based summer program headed by MIT and NASA. The program aimed to teach middle school students the basics of programming through hands-on activities, as well as competing in various challenges regarding robotics.',
     description: [
       'Consistently met with MIT, NASA, and ILC representatives to operate the Zero Robotics Middle School Summer Program 2022',
       'Created and updated detailed technical manuals, educator documents, and social media outlets for Zero Robotics staff',
